@@ -37,7 +37,7 @@ enableGitInfo = false
 # PaperMod 파라미터
 [params]
   env = "production"
-  description = "고양이와 개발 이야기"
+  description = "AI, 사이드잡, 미국주식, 생활정보"
   author = "catmycat"
 
   # 기본 테마 (auto, light, dark)
