@@ -1,5 +1,6 @@
 ---
 title: "블로그 시작 완전 가이드 - 제목 변경 테스트"
+slug: "hello-catmycat"
 date: 2025-11-08T10:00:00+09:00
 draft: false
 tags: ["Hugo", "블로그", "시작"]
