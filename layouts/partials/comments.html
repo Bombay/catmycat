@@ -1,20 +1,68 @@
 {{- /* Comments using Giscus */ -}}
 {{- if not .Params.disableComments -}}
-<div class="giscus-comments">
-  <script src="https://giscus.app/client.js"
-          data-repo="Bombay/catmycat"
-          data-repo-id="R_kgDOQRgJZw"
-          data-category="General"
-          data-category-id="DIC_kwDOQRgJZ84Cxj95"
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="1"
-          data-input-position="bottom"
-          data-theme="preferred_color_scheme"
-          data-lang="ko"
-          crossorigin="anonymous"
-          async>
-  </script>
-</div>
+<div class="giscus-comments"></div>
+
+<script>
+  (function() {
+    // 현재 테마 가져오기
+    function getCurrentTheme() {
+      const html = document.querySelector('html');
+      return html.dataset.theme || localStorage.getItem('pref-theme') || 'light';
+    }
+
+    // giscus 스크립트 동적 생성 및 삽입
+    function loadGiscus(theme) {
+      const container = document.querySelector('.giscus-comments');
+      container.innerHTML = ''; // 기존 giscus 제거
+
+      const script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.setAttribute('data-repo', 'Bombay/catmycat');
+      script.setAttribute('data-repo-id', 'R_kgDOQRgJZw');
+      script.setAttribute('data-category', 'General');
+      script.setAttribute('data-category-id', 'DIC_kwDOQRgJZ84Cxj95');
+      script.setAttribute('data-mapping', 'title');
+      script.setAttribute('data-strict', '0');
+      script.setAttribute('data-reactions-enabled', '1');
+      script.setAttribute('data-emit-metadata', '1');
+      script.setAttribute('data-input-position', 'bottom');
+      script.setAttribute('data-theme', theme);
+      script.setAttribute('data-lang', 'ko');
+      script.setAttribute('crossorigin', 'anonymous');
+      script.async = true;
+
+      container.appendChild(script);
+    }
+
+    // 초기 로드
+    document.addEventListener('DOMContentLoaded', function() {
+      const initialTheme = getCurrentTheme();
+      console.log('Initial giscus theme:', initialTheme);
+      loadGiscus(initialTheme);
+    });
+
+    // 테마 변경 감지
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'data-theme') {
+          const newTheme = getCurrentTheme();
+          console.log('Theme changed to:', newTheme);
+
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (iframe) {
+            iframe.contentWindow.postMessage(
+              { giscus: { setConfig: { theme: newTheme } } },
+              'https://giscus.app'
+            );
+          }
+        }
+      });
+    });
+
+    observer.observe(document.querySelector('html'), {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+  })();
+</script>
 {{- end -}}
