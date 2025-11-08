@@ -1,0 +1,130 @@
+baseURL = "https://catmycat.com/"
+languageCode = "ko-kr"
+title = "Cat My Cat"
+theme = "PaperMod"
+defaultContentLanguage = "ko"
+
+# 한글 처리
+hasCJKLanguage = true
+
+# 빌드 설정
+enableRobotsTXT = true
+enableEmoji = true
+enableGitInfo = false
+
+# 페이지당 글 수
+[pagination]
+  pagerSize = 10
+
+# 퍼머링크 구조 (SEO 친화적)
+[permalinks]
+  posts = "/:year/:month/:slug/"
+
+# 마크다운 설정
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # HTML 태그 허용
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    noClasses = false
+
+# 미니파이
+[minify]
+  minifyOutput = true
+
+# PaperMod 파라미터
+[params]
+  env = "production"
+  description = "고양이와 개발 이야기"
+  author = "catmycat"
+
+  # 기본 테마 (auto, light, dark)
+  defaultTheme = "auto"
+
+  # 기능 활성화
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  # 홈페이지 정보
+  [params.homeInfoParams]
+    Title = "안녕하세요! 🐱"
+    Content = """
+    Cat My Cat - 고양이와 함께하는 개발 이야기
+
+    Hugo, 웹 개발, 그리고 고양이에 대한 다양한 이야기를 공유합니다.
+    """
+
+  # 소셜 아이콘
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/yourusername"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:contact@catmycat.com"
+
+  # 검색 설정
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# 메뉴 설정
+[[menu.main]]
+  identifier = "home"
+  name = "홈"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "posts"
+  name = "글"
+  url = "/posts/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "tags"
+  name = "태그"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "search"
+  name = "검색"
+  url = "/search/"
+  weight = 40
+
+[[menu.main]]
+  identifier = "about"
+  name = "소개"
+  url = "/about/"
+  weight = 50
+
+# 출력 형식
+[outputs]
+  home = ["HTML", "RSS", "JSON"]  # JSON for search
+
+# Privacy 설정
+[privacy]
+  [privacy.x]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true

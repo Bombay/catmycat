@@ -1,0 +1,35 @@
+{{- $src := .Get 0 -}}
+{{- $alt := .Get 1 -}}
+
+{{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
+  {{/* 외부 URL인 경우 그대로 사용 */}}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy">
+{{- else -}}
+  {{/* 로컬 이미지인 경우 Page Bundle에서 가져오기 */}}
+  {{- with .Page.Resources.GetMatch $src -}}
+    {{- $image := . -}}
+
+    {{/* 원본이 1200px보다 크면 리사이즈 */}}
+    {{- $resized := $image -}}
+    {{- if gt $image.Width 1200 -}}
+      {{- $resized = $image.Resize "1200x" -}}
+    {{- end -}}
+
+    {{/* WebP 형식으로 변환 (용량 30-40% 감소) */}}
+    {{- $webp := $resized.Format "webp" -}}
+
+    <figure>
+      <img src="{{ $webp.RelPermalink }}"
+           alt="{{ $alt }}"
+           width="{{ $webp.Width }}"
+           height="{{ $webp.Height }}"
+           loading="lazy">
+      {{- if $alt -}}
+      <figcaption>{{ $alt }}</figcaption>
+      {{- end -}}
+    </figure>
+  {{- else -}}
+    <p style="color:red;">❌ 이미지를 찾을 수 없습니다: {{ $src }}</p>
+    <p style="color:orange;">💡 같은 폴더에 {{ $src }} 파일이 있는지 확인하세요.</p>
+  {{- end -}}
+{{- end -}}
