@@ -4,6 +4,9 @@ title = "catmycat"
 theme = "PaperMod"
 defaultContentLanguage = "ko"
 
+# Google Analytics
+googleAnalytics = "G-QT5CR66L14"
+
 # 한글 처리
 hasCJKLanguage = true
 
@@ -54,7 +57,7 @@ enableGitInfo = false
   UseHugoToc = true
   disableSpecial1stPost = false
   disableScrollToTop = false
-  comments = false
+  comments = true
   hidemeta = false
   hideSummary = false
   showtoc = true
@@ -72,10 +75,10 @@ enableGitInfo = false
   # 소셜 아이콘
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/yourusername"
+    url = "https://github.com/Bombay"
   [[params.socialIcons]]
     name = "email"
-    url = "mailto:contact@catmycat.com"
+    url = "mailto:ojcat0419@gmail.com"
 
   # 검색 설정
   [params.fuseOpts]
