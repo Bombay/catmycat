@@ -1,6 +1,6 @@
 baseURL = "https://catmycat.com/"
 languageCode = "ko-kr"
-title = "Cat My Cat"
+title = "catmycat"
 theme = "PaperMod"
 defaultContentLanguage = "ko"
 
@@ -64,9 +64,9 @@ enableGitInfo = false
   [params.homeInfoParams]
     Title = "안녕하세요! 🐱"
     Content = """
-    Cat My Cat - 고양이와 함께하는 개발 이야기
+    AI, 사이드잡, 미국주식, 생활정보를 공유하는 블로그입니다.
 
-    Hugo, 웹 개발, 그리고 고양이에 대한 다양한 이야기를 공유합니다.
+    실용적인 정보와 인사이트를 나눕니다.
     """
 
   # 소셜 아이콘
