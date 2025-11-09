@@ -39,7 +39,7 @@ enableGitInfo = false
 
 # PaperMod 파라미터
 [params]
-  env = "production"
+  # env = "production"  # 제거: Hugo가 자동으로 환경 감지
   description = "AI, 사이드잡, 미국주식, 생활정보"
   author = "catmycat"
 
