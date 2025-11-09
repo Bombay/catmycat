@@ -154,3 +154,4 @@ Key settings:
 - Contact: ojcat0419@gmail.com
 - GitHub: https://github.com/Bombay
 - GA4: G-QT5CR66L14
+- 커밋할 때 글쓰기를 했다면, 글쓰기 제목을 커밋 제목으로 해줘.
