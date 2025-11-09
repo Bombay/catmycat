@@ -87,10 +87,17 @@ Sitemap이랑 Robots.txt도 자동 생성된다.
 ## 글쓰기 환경
 
 ![vscode 로 만들어진 글쓰기 환경](image-1.png)
-비개발자 입장에선 마크다운이 처음엔 낯설다.
-네이버 블로그나 티스토리 에디터에 익숙하다면 더 그렇다.
+비개발자 입장에선 vscode가 낯설고, 마크다운도 익숙하지 않다. 개발자가 코딩할 때 사용하는 도구이니 그럴 수 밖에 없다. 네이버 블로그나 티스토리 에디터에 익숙하다면 더 그렇다.
 
-기본적인 문법이 있다. `# 제목`, `- 리스트 작성`, 이미지 같은 경우 `![설명](이미지.png)` 이런식으로 삽입하게 된다.
+[vscode](https://code.visualstudio.com/) 같은 경우, 설치하고 Claude Code 까지만 사용할 수 있으면 된다.
+
+- [vscode](https://code.visualstudio.com/) 설치
+- 폴더 하나를 오픈
+- [Claude Code](https://www.claude.com/product/claude-code) 설치
+- vscode terminal 에서 실행
+- 이제부터 Claude Code에게 모든걸(?) 위임
+
+마크다운의 경우 기본적인 문법이 있다. `# 제목`, `- 리스트 작성`, 이미지 같은 경우 `![설명](이미지.png)` 이런식으로 삽입하게 된다.
 
 작성 방법은 [마크다운 규칙](https://www.google.com/search?q=%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4+%EA%B7%9C%EC%B9%99&rlz=1C5CHFA_enKR1007KR1007&oq=%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4+%EA%B7%9C%EC%B9%99&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBwgBEAAY7wUyCggCEAAYgAQYogQyCggDEAAYgAQYogQyCggEEAAYogQYiQUyCggFEAAYgAQYogTSAQgyMDIxajBqMagCALACAA&sourceid=chrome&ie=UTF-8)이라고 검색하면 쉽게 찾을 수 있다.
 
