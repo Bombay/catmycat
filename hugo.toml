@@ -115,11 +115,11 @@ enableGitInfo = false
   url = "/search/"
   weight = 40
 
-[[menu.main]]
-  identifier = "about"
-  name = "소개"
-  url = "/about/"
-  weight = 50
+# [[menu.main]]
+#   identifier = "about"
+#   name = "소개"
+#   url = "/about/"
+#   weight = 50
 
 # 출력 형식
 [outputs]
