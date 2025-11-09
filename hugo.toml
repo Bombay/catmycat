@@ -11,7 +11,7 @@ googleAnalytics = "G-QT5CR66L14"
 hasCJKLanguage = true
 
 # 빌드 설정
-enableRobotsTXT = true
+enableRobotsTXT = false  # static/robots.txt 사용
 enableEmoji = true
 enableGitInfo = false
 
