@@ -149,6 +149,139 @@ Key settings:
 - 표는 비교가 필요한 경우에만 사용
 - 실제 경험과 구체적 수치를 우선적으로 포함
 
+---
+
+## SEO Checklist (커밋 전 필수 점검)
+
+블로그 글을 작성하고 커밋하기 전에 다음 항목들을 **반드시** 확인하세요:
+
+### Front Matter 필수 항목
+
+```yaml
+---
+title: "제목"                      # ✅ 명확하고 검색 친화적인 제목
+slug: "english-slug"               # ✅ 영문 slug (한글 URL 방지)
+date: 2025-11-09T11:41:17+09:00   # ✅ 자동 생성
+draft: false                       # ✅ 배포 준비 완료 시 false
+description: "120-160자 요약"     # ✅ 필수! 검색 결과 스니펫
+tags: ["태그1", "태그2", "태그3"] # ✅ 3-5개 권장
+categories: ["카테고리"]           # ✅ 1-2개 권장
+---
+```
+
+### 커밋 전 체크리스트
+
+#### 1. Front Matter 검증
+- [ ] **description** 작성 (120-160자, 글의 핵심 요약)
+- [ ] **tags** 추가 (3-5개, 구체적이고 검색 가능한 키워드)
+- [ ] **categories** 설정 (1-2개, 대분류)
+- [ ] **slug** 확인 (영문, 소문자, 하이픈 구분)
+- [ ] **draft: false** 확인 (배포할 준비가 되었는지)
+
+#### 2. 이미지 최적화
+- [ ] 모든 이미지에 **구체적인 alt 텍스트** 작성
+  ```markdown
+  # ❌ 나쁜 예
+  ![image](screenshot.png)
+  ![alt text](photo.jpg)
+
+  # ✅ 좋은 예
+  ![Hugo 블로그 PaperMod 테마 메인 화면](screenshot.png)
+  ![Google Analytics 4 실시간 트래픽 대시보드](ga4-dashboard.jpg)
+  ```
+- [ ] 이미지 크기 확인 (1200px 이상은 자동 리사이징됨)
+- [ ] 커스텀 shortcode 사용 권장: `{{< img "image.jpg" "설명" >}}`
+
+#### 3. 제목 구조 (Heading)
+- [ ] H1은 제목으로 자동 생성 (직접 작성 금지)
+- [ ] H2로 주요 섹션 구분 (`## 섹션 제목`)
+- [ ] H3로 하위 섹션 구분 (`### 하위 제목`)
+- [ ] Heading 순서 건너뛰지 않기 (H2 → H4 ❌)
+
+#### 4. 내부 링크 (글이 여러 개일 때)
+- [ ] 관련 글이 있다면 내부 링크 추가
+  ```markdown
+  [Hugo 셋업 가이드](/2025/11/hugo-setup/)를 참고하세요.
+  ```
+
+#### 5. 불필요한 항목 제거
+- [ ] **keywords** 필드 삭제 (2025년 기준 완전히 무의미)
+- [ ] 테스트용 Lorem Ipsum 텍스트 제거
+- [ ] 임시 주석 제거
+
+### SEO 자동 점검 명령어
+
+커밋 전에 다음을 실행하여 점검하세요:
+
+```bash
+# Front matter 확인
+head -20 content/posts/my-post/index.md
+
+# description 존재 여부 확인
+grep "description:" content/posts/my-post/index.md
+
+# alt 텍스트 없는 이미지 찾기
+grep -n "!\[\]" content/posts/my-post/index.md
+grep -n "!\[image\]" content/posts/my-post/index.md
+grep -n "!\[alt text\]" content/posts/my-post/index.md
+```
+
+### 잘못된 예시 vs 올바른 예시
+
+#### ❌ SEO에 나쁜 Front Matter
+```yaml
+---
+title: "블로그 포스트"
+date: 2025-11-09
+draft: false
+---
+```
+**문제점:**
+- slug 없음 (한글 제목이 URL에 인코딩됨)
+- description 없음 (검색 결과 스니펫 미흡)
+- tags/categories 없음 (분류 안 됨)
+
+#### ✅ SEO에 좋은 Front Matter
+```yaml
+---
+title: "Hugo로 수익형 블로그 만들기 완전 가이드"
+slug: "hugo-monetization-blog-guide"
+date: 2025-11-09T15:30:00+09:00
+draft: false
+description: "Hugo와 PaperMod 테마로 수익형 블로그를 만드는 전체 과정. WordPress, Ghost 비교와 Cloudflare Pages 배포 방법까지 실전 경험을 바탕으로 설명합니다."
+tags: ["Hugo", "블로그", "수익형블로그", "Cloudflare Pages", "PaperMod"]
+categories: ["웹개발"]
+---
+```
+
+### 커밋 전 최종 확인
+
+```bash
+# 1. 로컬에서 확인
+hugo server -D
+# → http://localhost:1313 에서 확인
+
+# 2. SEO 필수 항목 점검
+# - description 있는지
+# - tags 있는지
+# - 이미지 alt 텍스트 있는지
+
+# 3. 문제 없으면 커밋
+git add content/posts/my-post/
+git commit -m "글 제목"
+git push
+```
+
+### 주요 원칙
+
+1. **description은 필수** - 없으면 SEO 효과 50% 감소
+2. **slug는 영문** - 한글 URL은 검색엔진에 불리
+3. **이미지 alt는 구체적으로** - "image", "alt text" 금지
+4. **tags는 3-5개** - 너무 많으면 역효과
+5. **keywords 필드는 절대 사용하지 말 것** - 2009년부터 무의미
+
+---
+
 ## Contact & Analytics
 
 - Contact: ojcat0419@gmail.com
