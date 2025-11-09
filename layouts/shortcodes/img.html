@@ -8,21 +8,20 @@
   {{/* 로컬 이미지인 경우 Page Bundle에서 가져오기 */}}
   {{- with .Page.Resources.GetMatch $src -}}
     {{- $image := . -}}
+    {{- $processed := $image -}}
 
-    {{/* 원본이 1200px보다 크면 리사이즈 */}}
-    {{- $resized := $image -}}
+    {{/* 1200px보다 크면 리사이즈 */}}
     {{- if gt $image.Width 1200 -}}
-      {{- $resized = $image.Resize "1200x" -}}
+      {{- $processed = $image.Resize "1200x webp" -}}
+    {{- else -}}
+      {{- $processed = $image.Resize (printf "%dx webp" $image.Width) -}}
     {{- end -}}
 
-    {{/* WebP 형식으로 변환 (용량 30-40% 감소) */}}
-    {{- $webp := $resized.Format "webp" -}}
-
     <figure>
-      <img src="{{ $webp.RelPermalink }}"
+      <img src="{{ $processed.RelPermalink }}"
            alt="{{ $alt }}"
-           width="{{ $webp.Width }}"
-           height="{{ $webp.Height }}"
+           width="{{ $processed.Width }}"
+           height="{{ $processed.Height }}"
            loading="lazy">
       {{- if $alt -}}
       <figcaption>{{ $alt }}</figcaption>
