@@ -114,6 +114,41 @@ Key settings:
 - Giscus configured with `data-lang="ko"` for Korean UI
 - Menu items and UI text are in Korean
 
+## Git Commit Guidelines
+
+**Commit Message Language**: 한글로 작성
+- Good: "첫 블로그 포스트 작성"
+- Bad: "Add first blog post"
+
+**Commit Message Format**:
+- 간결하게 작성 (50자 이내)
+- 명령형보다는 완료형 사용 ("추가했다" 보다는 "추가")
+- 예시: "블로그 시작 포스트 작성", "Hugo 설정 변경", "이미지 최적화"
+
+## Blog Post Writing Guidelines
+
+블로그 글 작성 시 다음 규칙을 따라주세요:
+
+### 톤 & 스타일
+- **묵독했을 때 어색하지 않게**: 글을 소리 내어 읽었을 때 자연스럽게 읽히는지 확인
+- **간결하고 자연스러운 경험담 필체**: 진솔한 경험을 담되, 불필요한 장식 제거
+- **짧은 문장 사용**: 긴 문장은 여러 개의 짧은 문장으로 분리
+- **AI가 쓴 것처럼 보이지 않게**:
+  - "세 가지 조건을 정했다. 첫째, 둘째, 셋째" 같은 형식적 표현 지양
+  - 괄호 남발 지양, 자연스러운 문장으로 풀어씀
+  - 과도한 강조 표현 지양
+
+### E-E-A-T 반영
+- **경험(Experience)**: 실제로 겪은 것을 구체적으로 서술 ("3일 사용", "1주일 사용")
+- **전문성(Expertise)**: 구체적 수치 제시 (PageSpeed 점수, 비용, 속도 등)
+- **권위(Authoritativeness)**: 각 도구가 어떤 경우에 적합한지 명확히 제시
+- **신뢰성(Trustworthiness)**: 장단점을 균형있게 서술, 과장하지 않음
+
+### 구조
+- 명확한 섹션 구분
+- 표는 비교가 필요한 경우에만 사용
+- 실제 경험과 구체적 수치를 우선적으로 포함
+
 ## Contact & Analytics
 
 - Contact: ojcat0419@gmail.com
