@@ -8,7 +8,7 @@ categories: ["라이프스타일"]
 description: "수익형 블로그를 만들기 위해 각 플랫폼을 비교한 후기"
 ---
 
-![alt text](image.png)
+![Hugo 블로그 PaperMod 테마 메인 화면](image.png)
 
 ## 블로그를 시작한 이유
 
