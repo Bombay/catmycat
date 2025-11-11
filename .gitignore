@@ -22,3 +22,6 @@ Thumbs.db
 
 # Tasks
 task/
+
+# Playwright
+.playwright-mcp/
