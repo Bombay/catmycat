@@ -63,14 +63,22 @@ enableGitInfo = false
   showtoc = true
   tocopen = false
 
-  # 홈페이지 정보
-  [params.homeInfoParams]
-    Title = "안녕하세요! 🐱"
-    Content = """
-    AI, 사이드잡, 미국주식, 생활정보를 공유하는 블로그입니다.
+  # 프로필 모드 (이미지 표시)
+  [params.profileMode]
+    enabled = true
+    title = "catmycat."
+    subtitle = "AI, 사이드잡, 미국주식, 생활정보."
+    imageUrl = "/cat.png"
+    imageTitle = "catmycat 로고"
+    imageWidth = 150
+    imageHeight = 150
 
-    실용적인 정보와 인사이트를 나눕니다.
-    """
+    [[params.profileMode.buttons]]
+      name = "글"
+      url = "/posts"
+    [[params.profileMode.buttons]]
+      name = "태그"
+      url = "/tags"
 
   # 소셜 아이콘
   [[params.socialIcons]]
