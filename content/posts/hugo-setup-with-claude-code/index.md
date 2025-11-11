@@ -1,11 +1,11 @@
 ---
-title: "비개발자의 Hugo 블로그 30분 완성기"
+title: "비개발자도 해볼만한 Hugo 블로그 구축"
 slug: "hugo-setup-with-claude-code"
 date: 2025-11-09T22:16:14+09:00
 draft: false
 tags: ["Hugo", "Claude Code", "AI", "블로그", "PaperMod", "튜토리얼"]
 categories: ["웹개발"]
-description: "비개발자가 Hugo 블로그를 30분 만에 만드는 과정. Claude Code를 활용한 설치부터 첫 글 작성, Cloudflare Pages 배포까지 단계별로 설명합니다."
+description: "클로드 코드로 만드는 AI 글쓰기 환경"
 ---
 
 ![노트북으로 글쓰기하는 고양이 수채화](image.png)
