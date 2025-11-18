@@ -2,7 +2,7 @@
 title: "클로드 코드 스킬, 언제 써야 할까?"
 slug: "when-to-use-claude-code-skills"
 date: 2025-11-18T07:27:23+09:00
-draft: true
+draft: false
 tags: ["Claude Code", "개발도구", "AI", "생산성"]
 categories: ["AI"]
 description: "클로드 스킬이 좋다는데 어떻게, 언제 써야할까"
